@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recruitment System</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/bootstrap3/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/bootstrap3/css/bootstrap.min.css">
+  <script src="../assets/js/verify.js"></script>
+  <script src="../assets/bootstrap3/jquery.js"></script>
+  <script src="../assets/bootstrap3/js/bootstrap.js"></script>
+  <script src="../assets/bootstrap3/js/bootstrap.min.js"></script>
+  <script src="../assets/sweetAlert/sweetAlert.js"></script>
+  <style>
+    #mainDiv{
+        color: black;
+        font-weight: bolder;
+      }
+      </style>
+</head>
+
+<body>
+  <div class="background"> &nbsp; </div>
+
+  <nav class="navbar navbar-inverse navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbar-custom2" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-custom3" href="../index.html">Recruitment System</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a class="aCustom" href="./students.html">Student Profiles</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="aCustom" onClick="logOut()"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="loader" style="display: none;" class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+    <div style="position: fixed; top:100px;" class="preloader-2">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+      <span class="line line-4"></span>
+      <span class="line line-5"></span>
+      <span class="line line-6"></span>
+      <span class="line line-7"></span>
+      <span class="line line-8"></span>
+      <span class="line line-9"></span>
+      <span class="line line-10"></span>
+      <span class="line line-11"></span>
+      <span class="line line-12"></span>
+      <span class="line line-13"></span>
+      <span class="line line-14"></span>
+      <span class="line line-15"></span>
+      <div style="font-weight: bolder;">Loading</div>
+    </div>
+  </div>
+  <div id="imgUpld" style="display: none;" class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <label id="imgupldLbl" style="color:red; display: none"> * Reqiured</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+      <input onfocus="hide('imgupldLbl')" id="imgfile" type="file" class="form-control" name="image" placeholder="Upload Your Image">
+    </div>
+    <br>
+    <button onClick="upload('cm')" class="btn col-lg-6 col-lg-offset-3 btn col-sm-6 col-sm-offset-3 btn col-xs-6 col-xs-offset-3"><span
+        class="glyphicon glyphicon-user"></span> Upload</button>
+    <button onClick="cancle()" class="btn col-lg-6 col-lg-offset-3 btn col-sm-6 col-sm-offset-3 btn col-xs-6 col-xs-offset-3"><span
+        class="glyphicon glyphicon-user"></span> Cancle</button>
+  </div>
+  <div id="disp">
+    <div id="main">
+      <div id="mainDiv" style="margin-top: 10px;" class="col-lg-10 col-lg-offset-1 col-xs-12">
+        <div style="text-align: center;">
+          <img style="background-color: white; width: 150px; height: 150px; border-radius: 50%; border: 5px solid white; box-shadow: 0px 0px 10px 5px gray;"
+            id="pImg">
+        </div>
+        <div onClick="editImg()" style="text-align: center;cursor: pointer;">
+          <span style="text-shadow: 0px 0px 5px white;">
+            <span class="glyphicon glyphicon-edit"></span><span>Edit Image</span>
+          </span>
+        </div>
+        <h2 id="name" class="col-lg-8 col-lg-offset-2  col-xs-12" style="text-shadow: 0px 0px 5px white; ;font-weight: bolder; border-bottom: 1px dashed rgba(119, 119, 119, 0.726); text-align: center; padding-bottom: 3px;border-radius: 50%">
+          Demo
+        </h2>
+        <div class="col-lg-8 col-lg-offset-2">
+          <div style="text-shadow: 0px 0px 5px white; ;font-weight: bolder; margin: 15px;padding: 10px;box-shadow: 0px 0px 10px gray;border-radius: 10px;">
+
+            <h3 style=" text-align: center;">
+              Info
+            </h3>
+
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-info text-center">Email : <span id="email">Demo</span></li>
+              <br>
+              <li class="list-group-item list-group-item-info text-center">Contect Number : <span id="num">Demo</span></li>
+              <br>
+              <li class="list-group-item list-group-item-info text-center">Adress : <span id="adress">Demo</span></li>
+              <br>
+              <a onClick="post()" class="list-group-item list-group-item-danger text-center"> Post Vacancy </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="ourVecancy" style="text-align: center;" class="col-lg-12 col-sm-12 col-xs-12">
+
+      </div>
+
+
+
+    </div>
+    <div id="post" style="display: none;">
+      <div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="color: black;text-align: center;background-color: rgba(128, 128, 128, 0.514); padding: 5px; border-radius: 10px;box-shadow: 0px 0px 5px rgb(0, 0, 0)">
+        <span class="heading">
+          Creat Vecancy Post
+        </span>
+        <br>
+        <q>
+          <strong>
+            You Can selet Job type Job Designation Job desciption Sallry pakkage ect
+          </strong>
+        </q>
+        <br>
+        <q>
+          <strong>
+            You cant edit your post after submit you only access to view & delet your posts
+          </strong>
+        </q>
+      </div>
+      <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+        <br />
+        <label id="jobTypeLbl" style="color:red; display: none"> * Reqiured</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <select onfocus="hide('jobTypeLbl')" class="form-control" id="jobType">
+            <option value="null" selected disabled>Job Type</option>
+            <option value="FullTime Job">FullTime Job</option>
+            <option value="PartTime Job">PartTime Job</option>
+          </select>
+        </div>
+        <br />
+        <label id="designationLbl" style="color:red; display: none"> * Reqiured</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+          <input onfocus="hide('designationLbl')" id="designation" type="text" class="form-control" name="name"
+            placeholder="Designation">
+        </div>
+        <br />
+        <label id="JobDescriptionLbl" style="color:red; display: none"> * Reqiured</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <textarea style="resize: none;" onfocus="hide('JobDescriptionLbl')" rows="4" maxlength="100" id="JobDescription"
+            type="text" class="form-control" name="email" placeholder="Job Description"></textarea>
+        </div>
+        <br />
+        <label id="sallryPakkageLbl" style="color:red; display: none"> * Reqiured</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+          <input onfocus="hide('sallryPakkageLbl')" id="sallryPakkage" type="text" class="form-control" name="name"
+            placeholder="Sallry Pakkage">
+        </div>
+        <br />
+        <button onClick='createVecancy()' class="btn col-lg-6 col-lg-offset-3 btn col-sm-6 col-sm-offset-3 btn col-xs-6 col-xs-offset-3"><span
+            class="glyphicon glyphicon-user"></span> Post </button>
+      </div>
+    </div>
+
+  </div>
+  <script>
+
+    function hide(b) {
+      let src = document.getElementById(b);
+      src.innerHTML = "* Required";
+      src.style.display = "none";
+    }
+  </script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="../assets/js/post.js"></script>
+  <script src="../assets/js/timeLine.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/vecancyPosts.js"></script>
+  <script src="../assets/js/editImage.js"></script>
+</body>
+
+</html>

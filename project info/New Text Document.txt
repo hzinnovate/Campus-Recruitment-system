@@ -1,0 +1,10 @@
+Final Asignment:
+
+Requirments
+Using:
+Friebase: DB, Auth and Hosing
+PWA: Offline support:
+
+Make and Use Import & Export modules
+Use Flex Boxes for styling in whole application to make your app responsive.
+

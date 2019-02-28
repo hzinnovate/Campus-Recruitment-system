@@ -1,0 +1,110 @@
+.background {
+    background-image: url('../images/home-page-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    }
+.heading{
+    display: inline;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 35px;
+}
+body::-webkit-scrollbar {
+    width: 1em;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+.scrollDiv{
+    overflow: auto;
+    width: 200px; 
+    height: 350px
+}
+.scrollDiv::-webkit-scrollbar {
+    width: 1em;
+    border-radius: 10px;
+}
+.scrollDiv::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+.scrollDiv::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+  }
+  .navbar-custom{
+    background-color: rgba(128, 128, 128, 0.514) !important;
+    box-shadow: 0px 0px 15px black;     
+    border: none !important;
+  }
+  .navbar-custom2{
+    background-color: rgba(128, 128, 128, 0.514) !important;
+    border: none !important;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 50% !important;
+  }
+  .navbar-custom3{
+      color: black !important;
+      font-weight: bold !important;
+      font-size: 20px !important;
+  }
+  .aCustom{
+    color: black !important;
+  }
+  .preloader-2 {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+  }
+  .preloader-2 .line {
+    width: 5px;
+    height: 20px;
+    background: rgb(0, 0, 0);
+    margin: 0 1px;
+    display: inline-block;
+    animation: opacity-2 1000ms infinite ease-in-out;
+  }
+  .preloader-2 .line-1 { animation-delay: 800ms; }
+  .preloader-2 .line-2 { animation-delay: 600ms; }
+  .preloader-2 .line-3 { animation-delay: 400ms; }
+  .preloader-2 .line-4 { animation-delay: 200ms; }
+  .preloader-2 .line-6 { animation-delay: 200ms; }
+  .preloader-2 .line-7 { animation-delay: 400ms; }
+  .preloader-2 .line-8 { animation-delay: 600ms; }
+  .preloader-2 .line-9 { animation-delay: 800ms; }
+  .preloader-2 .line-10 { animation-delay: 800ms; }
+  .preloader-2 .line-11 { animation-delay: 600ms; }
+  .preloader-2 .line-12 { animation-delay: 400ms; }
+  .preloader-2 .line-13 { animation-delay: 200ms; }
+  .preloader-2 .line-14 { animation-delay: 200ms; }
+  .preloader-2 .line-15 { animation-delay: 400ms; }
+  @keyframes opacity-2 { 
+    0% { 
+      opacity: 1;
+      height: 15px;
+    }
+    50% { 
+      opacity: 0;
+      height: 12px;
+    }
+    100% { 
+      opacity: 1;
+      height: 15px;
+    }  
+  }

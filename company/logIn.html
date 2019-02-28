@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recruitment System</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/bootstrap3/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/bootstrap3/css/bootstrap.min.css">
+  <script src="../assets/bootstrap3/jquery.js"></script>
+  <script src="../assets/bootstrap3/js/bootstrap.js"></script>
+  <script src="../assets/bootstrap3/js/bootstrap.min.js"></script>
+  <script src="../assets/sweetAlert/sweetAlert.js"></script>
+</head>
+
+<body>
+  <div class="background"> &nbsp; </div>
+
+  <nav class="navbar navbar-inverse navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbar-custom2" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-custom3" href="../index.html">Recruitment System</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="aCustom" href="./signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="loader" style="display: none;" class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+    <div style="position: fixed; top:100px;" class="preloader-2">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+      <span class="line line-4"></span>
+      <span class="line line-5"></span>
+      <span class="line line-6"></span>
+      <span class="line line-7"></span>
+      <span class="line line-8"></span>
+      <span class="line line-9"></span>
+      <span class="line line-10"></span>
+      <span class="line line-11"></span>
+      <span class="line line-12"></span>
+      <span class="line line-13"></span>
+      <span class="line line-14"></span>
+      <span class="line line-15"></span>
+      <div style="font-weight: bolder;">Loading</div>
+    </div>
+  </div>
+  <div id="disp">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="color: black;text-align: center;background-color: rgba(128, 128, 128, 0.514); padding: 5px; border-radius: 10px;box-shadow: 0px 0px 5px rgb(0, 0, 0)">
+      <span class="heading">
+        Company Login Form
+      </span>
+      <br>
+      <q>
+        <strong>
+          Login with your email & Password
+        </strong>
+      </q>
+      <br>
+      <q>
+        <strong>
+          if you not have account Pleas select SignUp from menu bar and signUp new Account
+        </strong>
+      </q>
+    </div>
+    <div id="afterLoad" class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+      <br />
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="cEmail" type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="cPassword" type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <br />
+      <button id="loginBtn" onClick="logIn('company')" class="btn col-lg-6 col-lg-offset-3 btn col-sm-6 col-sm-offset-3 btn col-xs-6 col-xs-offset-3"><span
+          class="glyphicon glyphicon-log-in"></span> Login</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
